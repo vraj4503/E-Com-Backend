@@ -6,15 +6,18 @@ const path = require('path');
 
 const routes = require('./routes/routes');
 
-
-
 const app = express();
 const PORT = 3500;
 
-app.use(cors());
+
+app.use(cors({
+    origin: 'https://e-com-frontend-steel.vercel.app',
+    credentials: true
+}));
+
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://localhost:27017/e-commerce', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://pvraj040503:Vraj%404503@vrajmongodb.yqhnpwe.mongodb.net/?retryWrites=true&w=majority&appName=VrajMongoDB');
 
 const connection = mongoose.connection;
 
