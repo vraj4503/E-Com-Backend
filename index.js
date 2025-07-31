@@ -11,8 +11,10 @@ const PORT = 3500;
 
 
 app.use(cors({
-    origin: 'https://e-com-frontend-steel.vercel.app',
-    credentials: true
+    origin: ['https://e-com-frontend-steel.vercel.app', 'http://localhost:3000'],
+    credentials: true,
+    methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+    allowedHeaders: ['Content-Type']
 }));
 
 app.use(bodyParser.json());
